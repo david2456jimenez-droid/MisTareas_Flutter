@@ -40,13 +40,13 @@ class _PantallaTareasState extends State<PantallaTareas> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          debugPrint('Click en +');
-          final nueva = await Navigator.pushNamed<Map<String, String>>(
-            context,
-            Rutas.nueva,
-          );
-          debugPrint('Volvio con: $nueva');
-          if (nueva != null) {
+
+          final resultado = await Navigator.pushNamed(context, Rutas.nueva);
+
+          if (!mounted) return;
+
+          if (resultado != null) {
+            final nueva = Map<String, String>.from(resultado as Map);
             setState(() => tareas.add(nueva));
           }
         },
