@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import '../vistas/inicio.dart';
+import 'package:mis_tareas/vistas/inicio.dart';
+import 'package:mis_tareas/vistas/nueva_tarea.dart';
 
 class Rutas {
-  static Map<String, WidgetBuilder> obtenerRutas() {
-    return {
-      '/': (context) => const InicioView(),
-    };
-  }
+  static const String inicio = '/';
+  static const String nueva = '/nueva';
+
+  static Map<String, WidgetBuilder> get rutas => {
+    inicio: (context) => PantallaTareas(),
+    nueva: (context) => const NuevaTarea(),
+  };
 }

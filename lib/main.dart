@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Mis Tareas',
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
-      routes: Rutas.obtenerRutas(),
+      routes: Rutas.rutas,
     );
   }
 }

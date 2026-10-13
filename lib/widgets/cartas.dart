@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CartasTareas extends StatelessWidget{
-  const CartasTareas({super.key});
+  final String titulo;
+  final String descripcion;
+
+  const CartasTareas({
+    super.key,
+    required this.titulo,
+    required this.descripcion,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,24 +20,23 @@ class CartasTareas extends StatelessWidget{
         borderRadius: BorderRadius.circular(16),
       ),
 
-      child: const Row(
+      child: Row(
         children: [
-          Icon(Icons.radio_button_unchecked, color: Colors.grey),
-          SizedBox(width: 20),
-          
+          const Icon(Icons.radio_button_unchecked, color: Colors.grey),
+          const SizedBox(width: 20),
           Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Completar Practicas en flutter',
+                    titulo,
                     style:  TextStyle(
                         color: Colors.black,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text('Implementar Rutas Nombradas, Widgets modulares y navegacion...')
+                  Text(descripcion),
                 ],
               ),
           ),
